@@ -19,7 +19,7 @@ class Command(BaseCommand):
 
         while db_up is False:
             try:
-                self.check(database='default')
+                self.check(databases=['default'])
                 db_up = True
             except (Psycopg2OpError, OperationalError):
                 self.stdout.write('Database unavailable, waiting 1 second...')
